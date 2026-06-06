@@ -1,0 +1,305 @@
+/* ============================================
+   MarkFlow Studio - Theme Definitions
+   Three complete color schemes: Light, Dark, Eye-care
+   ============================================ */
+
+/* ---------- Light Theme (Default) ---------- */
+[data-theme="light"] {
+    /* Primary colors */
+    --bg-primary: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --text-tertiary: #8888a0;
+    --text-placeholder: #b0b0c8;
+
+    /* Accent */
+    --accent-color: #4f6ef7;
+    --accent-hover: #3b5de7;
+    --accent-secondary: #7c3aed;
+
+    /* Borders */
+    --border-color: #e8e8f0;
+
+    /* Toolbar */
+    --toolbar-bg: #fafafe;
+    --panel-header-bg: #f5f5fa;
+
+    /* Editor */
+    --editor-bg: #ffffff;
+    --editor-focus-bg: #ffffff;
+
+    /* Preview */
+    --preview-bg: #ffffff;
+
+    /* Buttons */
+    --btn-bg: #f0f0f8;
+    --btn-hover-bg: #e8e8f4;
+    --btn-active-bg: #d8d8ec;
+
+    /* Input */
+    --input-bg: #ffffff;
+
+    /* Scrollbar */
+    --scrollbar-track: #f5f5f5;
+    --scrollbar-thumb: #c8c8d8;
+    --scrollbar-thumb-hover: #a8a8c0;
+
+    /* Selection */
+    --selection-bg: #4f6ef7;
+    --selection-text: #ffffff;
+
+    /* Heading */
+    --heading-color: #1a1a2e;
+
+    /* Code */
+    --inline-code-bg: #f0f0f8;
+    --inline-code-color: #e11d48;
+    --code-block-bg: #f8f8fc;
+    --code-text: #333344;
+
+    /* Code syntax highlighting */
+    --code-keyword: #d63384;
+    --code-string: #0d9488;
+    --code-comment: #9ca3af;
+    --code-number: #f59e0b;
+    --code-function: #4f6ef7;
+    --code-operator: #6366f1;
+    --code-type: #7c3aed;
+
+    /* Table */
+    --table-header-bg: #f5f5fa;
+    --table-stripe-bg: #fafafe;
+    --table-hover-bg: #f0f0f8;
+
+    /* Blockquote */
+    --blockquote-bg: #f8f8fc;
+
+    /* Highlight (mark) */
+    --highlight-bg: #fef08a;
+
+    /* Formula */
+    --formula-bg: #f5f5fa;
+    --formula-color: #4f6ef7;
+
+    /* Mermaid */
+    --mermaid-bg: #f8f8fc;
+
+    /* Status bar */
+    --statusbar-bg: #f5f5fa;
+
+    /* Modal */
+    --modal-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.12);
+
+    /* Card */
+    --card-bg: #fafafe;
+
+    /* Dropdown */
+    --dropdown-bg: #ffffff;
+}
+
+/* ---------- Dark Theme ---------- */
+[data-theme="dark"] {
+    /* Primary colors */
+    --bg-primary: #1a1b2e;
+    --text-primary: #e4e4f0;
+    --text-secondary: #a0a0b8;
+    --text-tertiary: #6a6a80;
+    --text-placeholder: #4a4a60;
+
+    /* Accent */
+    --accent-color: #6c8cff;
+    --accent-hover: #8aa4ff;
+    --accent-secondary: #a78bfa;
+
+    /* Borders */
+    --border-color: #2d2e44;
+
+    /* Toolbar */
+    --toolbar-bg: #1e1f34;
+    --panel-header-bg: #222338;
+
+    /* Editor */
+    --editor-bg: #1a1b2e;
+    --editor-focus-bg: #1e1f34;
+
+    /* Preview */
+    --preview-bg: #1a1b2e;
+
+    /* Buttons */
+    --btn-bg: #2d2e44;
+    --btn-hover-bg: #363754;
+    --btn-active-bg: #404268;
+
+    /* Input */
+    --input-bg: #222338;
+
+    /* Scrollbar */
+    --scrollbar-track: #1e1f34;
+    --scrollbar-thumb: #3a3b58;
+    --scrollbar-thumb-hover: #4a4b6e;
+
+    /* Selection */
+    --selection-bg: #6c8cff;
+    --selection-text: #ffffff;
+
+    /* Heading */
+    --heading-color: #e4e4f0;
+
+    /* Code */
+    --inline-code-bg: #2d2e44;
+    --inline-code-color: #f472b6;
+    --code-block-bg: #222338;
+    --code-text: #d4d4e8;
+
+    /* Code syntax highlighting */
+    --code-keyword: #f472b6;
+    --code-string: #34d399;
+    --code-comment: #6b7280;
+    --code-number: #fbbf24;
+    --code-function: #6c8cff;
+    --code-operator: #818cf8;
+    --code-type: #a78bfa;
+
+    /* Table */
+    --table-header-bg: #222338;
+    --table-stripe-bg: #1e1f34;
+    --table-hover-bg: #2d2e44;
+
+    /* Blockquote */
+    --blockquote-bg: #222338;
+
+    /* Highlight (mark) */
+    --highlight-bg: #854d0e;
+
+    /* Formula */
+    --formula-bg: #222338;
+    --formula-color: #6c8cff;
+
+    /* Mermaid */
+    --mermaid-bg: #222338;
+
+    /* Status bar */
+    --statusbar-bg: #16172a;
+
+    /* Modal */
+    --modal-bg: #222338;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+
+    /* Card */
+    --card-bg: #222338;
+
+    /* Dropdown */
+    --dropdown-bg: #222338;
+}
+
+/* ---------- Eye-care Theme (Sepia/Green) ---------- */
+[data-theme="eyecare"] {
+    /* Primary colors */
+    --bg-primary: #f5f0e8;
+    --text-primary: #3d3226;
+    --text-secondary: #6b5d4f;
+    --text-tertiary: #9a8b7a;
+    --text-placeholder: #bfb09a;
+
+    /* Accent */
+    --accent-color: #2d8a56;
+    --accent-hover: #237044;
+    --accent-secondary: #1d6b3f;
+
+    /* Borders */
+    --border-color: #ddd5c8;
+
+    /* Toolbar */
+    --toolbar-bg: #f0ebe2;
+    --panel-header-bg: #ebe5da;
+
+    /* Editor */
+    --editor-bg: #f5f0e8;
+    --editor-focus-bg: #f2ede4;
+
+    /* Preview */
+    --preview-bg: #f5f0e8;
+
+    /* Buttons */
+    --btn-bg: #ebe5da;
+    --btn-hover-bg: #e0d9cc;
+    --btn-active-bg: #d5cdc0;
+
+    /* Input */
+    --input-bg: #f5f0e8;
+
+    /* Scrollbar */
+    --scrollbar-track: #ebe5da;
+    --scrollbar-thumb: #c8bfb0;
+    --scrollbar-thumb-hover: #b0a590;
+
+    /* Selection */
+    --selection-bg: #2d8a56;
+    --selection-text: #ffffff;
+
+    /* Heading */
+    --heading-color: #3d3226;
+
+    /* Code */
+    --inline-code-bg: #ebe5da;
+    --inline-code-color: #b45309;
+    --code-block-bg: #ebe5da;
+    --code-text: #4a3f32;
+
+    /* Code syntax highlighting */
+    --code-keyword: #b45309;
+    --code-string: #047857;
+    --code-comment: #9a8b7a;
+    --code-number: #c2410c;
+    --code-function: #2d8a56;
+    --code-operator: #1d6b3f;
+    --code-type: #7c3aed;
+
+    /* Table */
+    --table-header-bg: #ebe5da;
+    --table-stripe-bg: #f0ebe2;
+    --table-hover-bg: #e5dfd4;
+
+    /* Blockquote */
+    --blockquote-bg: #ebe5da;
+
+    /* Highlight (mark) */
+    --highlight-bg: #fde68a;
+
+    /* Formula */
+    --formula-bg: #ebe5da;
+    --formula-color: #2d8a56;
+
+    /* Mermaid */
+    --mermaid-bg: #ebe5da;
+
+    /* Status bar */
+    --statusbar-bg: #ebe5da;
+
+    /* Modal */
+    --modal-bg: #f5f0e8;
+    --shadow-color: rgba(60, 40, 20, 0.12);
+
+    /* Card */
+    --card-bg: #f0ebe2;
+
+    /* Dropdown */
+    --dropdown-bg: #f5f0e8;
+}
+
+/* ---------- Theme Transition ---------- */
+[data-theme] * {
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+/* Exclude elements that should not transition */
+[data-theme] textarea,
+[data-theme] input,
+[data-theme] .preview-content,
+[data-theme] .slide-content,
+[data-theme] .progress-bar {
+    transition: none;
+}

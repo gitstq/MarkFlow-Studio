@@ -1,0 +1,25 @@
+{
+  "name": "markflow-studio",
+  "version": "1.0.0",
+  "description": "MarkFlow Studio - Lightweight Markdown Smart Typesetting Engine / 轻量级Markdown智能排版引擎",
+  "keywords": [
+    "markdown",
+    "editor",
+    "typesetting",
+    "preview",
+    "slideshow",
+    "zero-dependency"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "build": "echo 'Zero-dependency project - no build step required'",
+    "test": "echo 'No build dependencies - open index.html in browser to test'",
+    "deploy": "echo 'Deploy by copying files to any static hosting'"
+  },
+  "author": "gitstq",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitstq/MarkFlow-Studio.git"
+  }
+}

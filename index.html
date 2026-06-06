@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarkFlow Studio - Markdown Smart Typesetting Engine</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <!-- Top Toolbar -->
+    <header class="toolbar" id="toolbar">
+        <div class="toolbar-left">
+            <div class="toolbar-brand">
+                <span class="logo">M</span>
+                <span class="brand-name">MarkFlow Studio</span>
+            </div>
+            <div class="toolbar-divider"></div>
+            <!-- File Operations -->
+            <div class="toolbar-group" id="fileGroup">
+                <button class="toolbar-btn" id="btnNew" title="New File (Ctrl+N)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnOpen" title="Open File (Ctrl+O)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnSave" title="Save (Ctrl+S)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                </button>
+                <div class="toolbar-dropdown" id="exportDropdown">
+                    <button class="toolbar-btn" id="btnExport" title="Export">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
+                    <div class="dropdown-menu" id="exportMenu">
+                        <button class="dropdown-item" data-export="md">Export as Markdown (.md)</button>
+                        <button class="dropdown-item" data-export="html">Export as HTML (.html)</button>
+                        <button class="dropdown-item" data-export="pdf">Export as PDF</button>
+                    </div>
+                </div>
+            </div>
+            <div class="toolbar-divider"></div>
+            <!-- Format Tools -->
+            <div class="toolbar-group" id="formatGroup">
+                <button class="toolbar-btn" id="btnBold" title="Bold (Ctrl+B)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnItalic" title="Italic (Ctrl+I)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnStrikethrough" title="Strikethrough">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4H9a3 3 0 0 0-3 3v0a3 3 0 0 0 3 3h6"/><line x1="4" y1="12" x2="20" y2="12"/><path d="M15 12a3 3 0 0 1 0 6H8"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnHeading" title="Heading">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h8"/><path d="M4 18V6"/><path d="M12 18V6"/><path d="M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnList" title="List">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnTaskList" title="Task List">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnCode" title="Code Block">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnTable" title="Table">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnFormula" title="Math Formula">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><text x="3" y="18" font-size="16" fill="currentColor" stroke="none" font-family="serif" font-style="italic">fx</text></svg>
+                </button>
+                <button class="toolbar-btn" id="btnMermaid" title="Mermaid Chart">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnQuote" title="Blockquote">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 17h3l2-4V7H5v6h3"/><path d="M14 17h3l2-4V7h-6v6h3"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnLink" title="Insert Link (Ctrl+K)">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnImage" title="Insert Image">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnHr" title="Horizontal Rule">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="toolbar-right">
+            <!-- View Toggle -->
+            <div class="toolbar-group" id="viewGroup">
+                <button class="toolbar-btn view-btn active" data-view="split" title="Split View">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg>
+                </button>
+                <button class="toolbar-btn view-btn" data-view="edit" title="Edit Only">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </button>
+                <button class="toolbar-btn view-btn" data-view="preview" title="Preview Only">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+                <button class="toolbar-btn view-btn" data-view="slideshow" title="Slideshow Mode">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </button>
+            </div>
+            <div class="toolbar-divider"></div>
+            <!-- Theme Toggle -->
+            <div class="toolbar-group" id="themeGroup">
+                <button class="toolbar-btn" id="btnTheme" title="Toggle Theme">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+            </div>
+            <div class="toolbar-divider"></div>
+            <!-- Templates & Settings -->
+            <div class="toolbar-group">
+                <button class="toolbar-btn" id="btnTemplates" title="Templates">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                </button>
+                <button class="toolbar-btn" id="btnSettings" title="Settings">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="mainContent">
+        <!-- Editor Panel -->
+        <div class="panel editor-panel" id="editorPanel">
+            <div class="panel-header">
+                <span class="panel-title">Editor</span>
+                <div class="editor-actions">
+                    <button class="panel-btn" id="btnFindReplace" title="Find & Replace (Ctrl+H)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Find & Replace Bar -->
+            <div class="find-bar" id="findBar" style="display:none;">
+                <div class="find-input-group">
+                    <input type="text" id="findInput" class="find-input" placeholder="Find...">
+                    <span class="find-count" id="findCount">0</span>
+                </div>
+                <div class="find-input-group">
+                    <input type="text" id="replaceInput" class="find-input" placeholder="Replace...">
+                </div>
+                <div class="find-actions">
+                    <button class="find-btn" id="btnFindPrev" title="Previous">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+                    </button>
+                    <button class="find-btn" id="btnFindNext" title="Next">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <button class="find-btn" id="btnReplace" title="Replace">Replace</button>
+                    <button class="find-btn" id="btnReplaceAll" title="Replace All">All</button>
+                    <button class="find-btn" id="btnFindClose" title="Close">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="editor-wrapper" id="editorWrapper">
+                <textarea class="editor-textarea" id="editor" spellcheck="false" placeholder="Start writing Markdown here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Resizer -->
+        <div class="panel-resizer" id="panelResizer"></div>
+
+        <!-- Preview Panel -->
+        <div class="panel preview-panel" id="previewPanel">
+            <div class="panel-header">
+                <span class="panel-title">Preview</span>
+                <div class="preview-actions">
+                    <button class="panel-btn" id="btnCopyHtml" title="Copy HTML">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="preview-wrapper" id="previewWrapper">
+                <div class="preview-content markdown-body" id="preview"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Slideshow Overlay -->
+    <div class="slideshow-overlay" id="slideshowOverlay" style="display:none;">
+        <div class="slideshow-container" id="slideshowContainer">
+            <div class="slide-content markdown-body" id="slideContent"></div>
+        </div>
+        <div class="slideshow-controls" id="slideshowControls">
+            <button class="slide-btn" id="btnSlidePrev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <span class="slide-counter" id="slideCounter">1 / 1</span>
+            <button class="slide-btn" id="btnSlideNext">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+        <div class="slideshow-progress" id="slideshowProgress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <footer class="statusbar" id="statusbar">
+        <div class="statusbar-left">
+            <span class="status-item" id="statusMode">Split View</span>
+            <span class="status-divider">|</span>
+            <span class="status-item" id="statusWords">Words: 0</span>
+            <span class="status-divider">|</span>
+            <span class="status-item" id="statusLines">Lines: 0</span>
+            <span class="status-divider">|</span>
+            <span class="status-item" id="statusChars">Characters: 0</span>
+        </div>
+        <div class="statusbar-right">
+            <span class="status-item" id="statusSave">Saved</span>
+            <span class="status-divider">|</span>
+            <span class="status-item" id="statusTheme">Light</span>
+        </div>
+    </footer>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal" style="display:none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Settings</h3>
+                <button class="modal-close" id="btnCloseSettings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label class="setting-label">Font Size</label>
+                    <div class="setting-control">
+                        <input type="range" id="settingFontSize" min="12" max="24" value="16">
+                        <span class="setting-value" id="fontSizeValue">16px</span>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Editor Font</label>
+                    <select class="setting-select" id="settingEditorFont">
+                        <option value="'Consolas', 'Monaco', monospace">Consolas</option>
+                        <option value="'Fira Code', monospace">Fira Code</option>
+                        <option value="'Source Code Pro', monospace">Source Code Pro</option>
+                        <option value="'Menlo', monospace">Menlo</option>
+                        <option value="monospace">System Monospace</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Tab Size</label>
+                    <div class="setting-control">
+                        <select class="setting-select" id="settingTabSize">
+                            <option value="2">2 Spaces</option>
+                            <option value="4" selected>4 Spaces</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Auto Save</label>
+                    <div class="setting-control">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="settingAutoSave" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Auto CJK Spacing</label>
+                    <div class="setting-control">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="settingCjkSpacing" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">Scroll Sync</label>
+                    <div class="setting-control">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="settingScrollSync" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btnSaveSettings">Save Settings</button>
+                <button class="btn btn-secondary" id="btnCancelSettings">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Templates Modal -->
+    <div class="modal-overlay" id="templatesModal" style="display:none;">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h3 class="modal-title">Document Templates</h3>
+                <button class="modal-close" id="btnCloseTemplates">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="templates-grid" id="templatesGrid">
+                    <!-- Templates will be populated by templates.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden file input for opening files -->
+    <input type="file" id="fileInput" accept=".md,.markdown,.txt,.text" style="display:none;">
+
+    <!-- Scripts -->
+    <script src="js/markdown-parser.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/slideshow.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
